@@ -10,20 +10,10 @@
             padding: 0;
             background-color: #35485e; /* Updated background color */
             display: flex;
-            flex-direction: column; /* Added to create a vertical layout */
+            justify-content: center;
             align-items: center;
             min-height: 100vh;
             font-family: Calibri, sans-serif; /* Set font to Calibri */
-        }
-
-        .header-box {
-            background-color: white;
-            border-radius: 20px;
-            padding: 20px;
-            width: 1480px;
-            height: 40px;
-            text-align: center;
-            margin-bottom: 30px; /* Added margin to separate header from white-box */
         }
 
         .white-box {
@@ -31,18 +21,43 @@
             border-radius: 20px;
             padding: 20px;
             width: 570px; /* Reduced width */
-            height: 450px; /* Reduced height */
+            height: 703px; /* Increased height by 25% */
             text-align: center;
+        }
+
+        .name {
+            font-size: 150%; /* Increased font size by 50% */
+        }
+
+        .link-box {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .link {
+            background-color: black;
+            color: white;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 0 5px;
+            cursor: pointer;
+            text-decoration: none; /* Remove underline */
+        }
+
+        .link:hover {
+            background-color: #333;
         }
     </style>
 </head>
 <body>
-    <div class="header-box">
-    </div>
     <div class="white-box">
-        <!-- Your content goes here -->
-        <h1>Zachary Jenkins</h1>
-        <p>This is my website! You can find lots of different information about me here!</p>
+        <h1 class="name">Zachary Jenkins</h1>
+        <div class="link-box">
+            <a class="link" href="[1](https://example.com)">Website 1</a>
+            <a class="link" href="[2](https://www.linkedin.com/in/zachajen)">LinkedIn</a>
+            <a class="link" href="[3](https://example.net)">Website 3</a>
+        </div>
     </div>
 </body>
 </html>
