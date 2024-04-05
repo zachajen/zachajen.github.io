@@ -10,27 +10,40 @@
             padding: 0;
             background-color: #35485e; /* Updated background color */
             display: flex;
-            justify-content: center;
+            flex-direction: column; /* Added to create a vertical layout */
             align-items: center;
             min-height: 100vh;
             font-family: Calibri, sans-serif; /* Set font to Calibri */
+        }
+
+        .header-box {
+            background-color: white;
+            border-radius: 20px;
+            padding: 20px;
+            width: 600px;
+            text-align: center;
+            margin-bottom: 20px; /* Added margin to separate header from white-box */
         }
 
         .white-box {
             background-color: white;
             border-radius: 20px;
             padding: 20px;
-            width: 600px; /* Doubled width */
-            height: 600px; /* Doubled height */
+            width: 570px; /* Reduced width */
+            height: 450px; /* Reduced height */
             text-align: center;
         }
     </style>
 </head>
 <body>
+    <div class="header-box">
+        <h1></h1>Website Header</h1>
+        <p>This is the header box</p>
+    </div>
     <div class="white-box">
         <!-- Your content goes here -->
         <h1>Zachary Jenkins</h1>
-        <p>This is my website! You can find information on me here!</p>
+        <p>This is my website! You can find lots of different information about me here!</p>
     </div>
 </body>
 </html>
