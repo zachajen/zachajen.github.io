@@ -3,61 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Website</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zachary Jenkins' Website</title>
     <style>
         body {
+            font-family: Arial, sans-serif;
+            background-color: #96A0B1; /* Background color */
             margin: 0;
             padding: 0;
-            background-color: #35485e; /* Updated background color */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            font-family: Calibri, sans-serif; /* Set font to Calibri */
         }
-
-        .white-box {
-            background-color: white;
-            border-radius: 20px;
-            padding: 20px;
-            width: 560px;
-            height: 605px;
+        header {
+            background-color: #2D4263; /* Updated header background color */
+            color: white;
+            padding: 10px 0;
             text-align: center;
         }
-
-        .name {
-            font-size: 250%; /* Increased font size by 50% */
+        nav {
+            text-align: center;
+            margin: 20px 0;
         }
-
-        .link-box {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 570px;
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
         }
-
-        .link {
-            background-color: black;
-            color: white;
-            border-radius: 10px;
-            padding: 10px;
-            margin: 0 5px;
-            cursor: pointer;
-            text-decoration: none; /* Remove underline */
+        nav a:hover {
+            color: #4CAF50;
         }
-
-        .link:hover {
-            background-color: #333;
+        main {
+            margin: 20px;
+            padding: 20px;
+            background-color: #F4F5F7; /* Slightly lighter shade for main background */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
-    <div class="white-box">
-        <h1 class="name">Zachary Jenkins</h1>
-        <div class="link-box">
-            <a class="link" href="[1](https://example.com)">  1  </a>
-            <a class="link" href="[2](https://www.linkedin.com/in/zachajen)">LinkedIn</a>
-            <a class="link" href="[3](https://example.net)">  3  </a>
-        </div>
-    </div>
+    <header>
+        <h1>Zachary Jenkins</h1>
+    </header>
+
+    <nav>
+        <a href="home.html">Home</a> <!-- Updated to link to home.html -->
+        <a href="about.html">About</a> <!-- Updated to link to about.html -->
+        <a href="contact.html">Contact</a> <!-- Updated to link to contact.html -->
+        <a href="projects.html">Projects</a> <!-- Points to projects.html -->
+        <a href="hobbies.html">Hobbies</a> <!-- Added new option for hobbies.html -->
+    </nav>
+
+    <main>
+        <section id="home">
+            <h2>Home</h2>
+            <p>This is a simple website hosted by me. Feel free to explore and click on the links above.</p>
+        </section>
+
+        <section id="about">
+            <h2>About</h2>
+            <p>This website is a basic example of HTML and CSS structure. It is designed to be clean, minimalistic, and functional.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>You can reach me via email at: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Zachary Jenkins. All rights reserved.</p>
+    </footer>
 </body>
 </html>
