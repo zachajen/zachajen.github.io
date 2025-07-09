@@ -1,83 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home - Zachary Jenkins</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #96A0B1; /* Background color */
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #2D4263; 
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
-        nav {
-            text-align: center;
-            margin: 20px 0;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #fff;
-            font-size: 18px;
-        }
-        nav a:hover {
-            color: #4CAF50;
-        }
-        main {
-            margin: 20px;
-            padding: 20px;
-            background-color: #F4F5F7; 
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center; 
-        }
-        h1, h2 {
-            font-size: 36px; 
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-        p {
-            font-size: 18px;
-            color: #333;
-        }
-        footer {
-            text-align: center;
-            margin: 20px 0;
-            font-size: 14px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My website</title>
+	  <style>
+	  :root {
+		--bg-color: #1e2a38;
+		--text-color: #e0e0e0;
+		--header-bg: #2c3e50;
+		--main-bg: #273746;
+		--footer-bg: #2c3e50;
+		--link-color: #ffffff;
+		--main-text-color: #e0e0e0;
+	  }
+
+	  body.light-mode {
+		--bg-color: #f4f4f4;
+		--text-color: #e0e0e0;
+		--header-bg: #2c3e50; /* changed from green to blue-grey */
+		--footer-bg: #333;
+		--link-color: #ffffff;
+		--main-text-color: #e0e0e0; /* Keep main box text white */
+	  }
+
+	  body {
+		font-family: 'Segoe UI', sans-serif;
+		margin: 0;
+		padding: 0;
+		background-color: var(--bg-color);
+		color: var(--text-color);
+		transition: background-color 0.3s, color 0.3s;
+	  }
+
+	  header {
+		background-color: var(--header-bg);
+		color: var(--link-color);
+		padding: 1rem 2rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+	  }
+
+	  .menu-icon {
+		position: absolute;
+		right: 1.5rem;
+		top: 1rem;
+		font-size: 1.8rem;
+		cursor: pointer;
+		color: var(--link-color);
+		background: none;
+		border: none;
+		z-index: 1100;
+	  }
+
+	  .sidebar {
+		position: fixed;
+		top: 0;
+		right: 0;
+		width: 250px;
+		height: 100%;
+		background-color: var(--main-bg);
+		box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+		padding: 2rem;
+		transform: translateX(100%);
+		transition: transform 0.3s ease, opacity 0.3s ease;
+		opacity: 0;
+		visibility: hidden;
+		z-index: 1000;
+		}
+
+		.sidebar.open {
+		transform: translateX(0);
+		opacity: 1;
+		visibility: visible;
+	  }
+
+	  .sidebar button {
+		display: block;
+		margin-top: 1rem;
+		padding: 0.5rem 1rem;
+		background-color: transparent;
+		border: 2px solid var(--link-color);
+		color: var(--link-color);
+		border-radius: 5px;
+		cursor: pointer;
+	  }
+
+	  main {
+		padding: 2rem;
+		background-color: var(--main-bg);
+		color: var(--main-text-color);
+		max-width: 800px;
+		margin: 2rem auto;
+		border-radius: 8px;
+		box-shadow: 0 0 10px rgba(0,0,0,0.3);
+	  }
+
+	  footer {
+		text-align: center;
+		padding: 1rem;
+		background-color: var(--footer-bg);
+		color: var(--link-color);
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+	  }
+	</style>
 </head>
 <body>
-    <header>
-        <h1>Zachary Jenkins</h1>
-    </header>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="projects.html">Projects</a>
-        <a href="hobbies.html">Hobbies</a>
-    </nav>
+  <header>
+    <h1>Zach Jenkins' Site</h1>
+    <button class="menu-icon" onclick="toggleSidebar()">☰</button>
+  </header>
 
-    <main>
-        <h2>Home</h2>
-        <p>Hello! My name is Zachary Jenkins! Welcome to my website! Here you can find out more about me, such as what I do, how to contact me, and some of my hobbies!</p>
-        <p>If you have any questions, please feel free to reach out with the information in my Contact tab! Thank you again for checking out my website!</p>
+  <div class="sidebar" id="sidebar">
+    <h3>Settings</h3>
+    <button onclick="toggleTheme()">Toggle Theme</button>
+    <button onclick="toggleSidebar()">Close</button>
+  </div>
 
-        <img src="zachpicture.jpg" alt="Picture of Zachary Jenkins" style="max-width: 100%; height: auto; border-radius: 8px; margin-top: 20px;">
-    </main>
+  <main>
+    <h2>Hello, world!</h2>
+    <p>This site now has a sidebar menu with a theme toggle! Click the ☰ icon in the top-right to open it.</p>
+  </main>
 
-    <footer>
-        <p>&copy; 2024 Zachary Jenkins. All rights reserved.</p>
-    </footer>
+  <footer>
+    &copy; 2025 Z. Jenkins
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+    }
+
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('open');
+    }
+  </script>
+
 </body>
 </html>
